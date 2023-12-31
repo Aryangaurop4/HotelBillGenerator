@@ -1,0 +1,48 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <form>
+    <label for="checkInDate">Check-In Date (dd/mmm/yy):</label>
+    <input type="text" id="checkInDate" name="checkInDate" pattern="\d{2}/[a-zA-Z]{3}/\d{2}" required>
+
+    <label for="checkInTime">Check-In Time:</label>
+    <input type="time" id="checkInTime" name="checkInTime" required>
+
+    <label for="Nights">Number of Nights:</label>
+    <input type="number" id="Nights" name="Nights" required>
+
+    <label for="Amount">Amount:</label>
+    <input type="number" id="Amount" name="Amount" required>
+
+    <label for="dateBook">Booking Date (dd/mmm/yy):</label>
+    <input type="text" id="dateBook" name="dateBook" pattern="\d{2}/[a-zA-Z]{3}/\d{2}" required>
+
+    <label for="checkOutDate">Check-Out Date (dd/mmm/yy):</label>
+    <input type="text" id="checkOutDate" name="checkOutDate" pattern="\d{2}/[a-zA-Z]{3}/\d{2}" required>
+
+    <label for="cityDropdown">Select City:</label>
+    <select id="cityDropdown" onchange="updateCityDetails()">
+      <option value="Mathura">Mathura</option>
+      <option value="Kasganj">Kasganj</option>
+      <option value="Jhansi">Jhansi</option>
+      <option value="Etah">Etah</option>
+      <option value="Etawah">Etawah</option>
+    </select>
+
+    <button type="button" onclick="generateHotelBill()">Generate Hotel Bill</button>
+
+    <p id="placed" class="placeholder"></p>
+    <p id="confirmationMessage"></p>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
